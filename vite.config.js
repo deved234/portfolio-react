@@ -2,7 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import contact from "./api/contact.js";
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), "");
   for (const key of [
     "RESEND_API_KEY",
@@ -13,6 +13,8 @@ export default defineConfig(({ mode }) => {
     if (env[key]) process.env[key] = env[key];
   }
   return {
+    ssr: { noExternal: ["gsap", "@gsap/react", "lenis"] },
+    build: { copyPublicDir: !isSsrBuild },
     plugins: [
       react(),
       {

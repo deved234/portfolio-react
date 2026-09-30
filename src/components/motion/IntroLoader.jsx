@@ -29,7 +29,7 @@ export default function IntroLoader({ onComplete }) {
     { scope: root },
   );
   return (
-    <div ref={root} className={styles.loader} aria-hidden="true">
+    <div ref={root} data-intro className={styles.loader} aria-hidden="true">
       <span className={styles.greeting}>
         <i />
         <span ref={word}>Hello</span>

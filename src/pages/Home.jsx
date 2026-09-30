@@ -16,7 +16,8 @@ export default function Home({ ready }) {
         </h2>
         <div>
           <p data-reveal>
-            I’m David, a frontend developer working with React and Next.js.
+            I’m David Atef, a frontend developer based in Assiut, Egypt,
+            working with React and Next.js.
             Currently a Frontend Developer Trainee at Reservya, bringing
             interfaces to life with care for the details.
           </p>

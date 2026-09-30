@@ -188,7 +188,7 @@ section[tabindex="-1"]:focus {
 .work-columns {
   padding: 0 35px 25px;
   font-size: 10px;
-  color: #777;
+  color: #737373;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -209,7 +209,7 @@ section[tabindex="-1"]:focus {
 }
 .work-item:hover h3 {
   transform: translateX(-8px);
-  color: #777;
+  color: #737373;
 }
 .work-role,
 .work-stack {
@@ -227,7 +227,7 @@ section[tabindex="-1"]:focus {
   justify-content: space-between;
   gap: 30px;
   font-size: 12px;
-  color: #777;
+  color: #737373;
   margin-top: 40px;
 }
 .work-end a {

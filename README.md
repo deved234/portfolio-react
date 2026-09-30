@@ -59,3 +59,7 @@ Native modal navigation, keyboard focus handling, labelled fields, skip link,
 motion pause and reduced-motion support. Smooth scrolling is desktop-only and
 stops while the menu is open. Filters and list/grid choice persist for the session;
 browser Back restores scroll position. No separate Work archive is created.
+
+## SEO
+
+Production builds prerender ten public pages, unique metadata, JSON-LD, sitemap and robots.txt. See [SEO setup and Search Console](docs/seo.md). Run `npm run test:seo` after building.

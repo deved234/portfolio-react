@@ -6,3 +6,5 @@ dist/
 output/
 .playwright-cli/
 *.local
+
+.ssr/

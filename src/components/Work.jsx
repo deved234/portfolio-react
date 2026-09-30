@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import { Link } from "react-router-dom";
 import { LayoutGrid, List } from "lucide-react";
 import gsap from "gsap";
@@ -8,6 +8,17 @@ import ProjectMedia from "./ProjectMedia";
 import useReducedMotion from "../hooks/useReducedMotion";
 
 const filters = ["All", "React", "Next.js", "HTML / CSS"];
+const subscribe = () => () => {};
+function useSavedChoice(key, fallback) {
+  // Hydration starts with the server value; later route mounts read session state immediately.
+  const saved = useSyncExternalStore(
+    subscribe,
+    () => stored(key, fallback),
+    () => fallback,
+  );
+  const [choice, setChoice] = useState(null);
+  return [choice ?? saved, setChoice];
+}
 function stored(key, fallback) {
   try {
     const value = sessionStorage.getItem(key);
@@ -18,8 +29,8 @@ function stored(key, fallback) {
   }
 }
 export default function Work() {
-  const [filter, setFilter] = useState(() => stored("work-filter", "All"));
-  const [view, setView] = useState(() => stored("work-view", "list"));
+  const [filter, setFilter] = useSavedChoice("work-filter", "All");
+  const [view, setView] = useSavedChoice("work-view", "list");
   const [hovered, setHovered] = useState(null);
   const root = useRef(null),
     preview = useRef(null),

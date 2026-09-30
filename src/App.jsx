@@ -26,6 +26,9 @@ import { projects } from "./data/projects";
 import useReducedMotion from "./hooks/useReducedMotion";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import "./site.css";
+import { updateSeo } from "./data/seo.js";
+const useClientLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const introKey = "david-portfolio:intro:v2";
 const positions = new Map();
@@ -42,7 +45,12 @@ function needsIntro() {
   }
 }
 export default function App() {
-  const [loading, setLoading] = useState(needsIntro);
+  const [loading, setLoading] = useState(true);
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+    if (!needsIntro()) setLoading(false);
+  }, []);
   const reduced = useReducedMotion(),
     location = useLocation(),
     navigationType = useNavigationType();
@@ -79,23 +87,16 @@ export default function App() {
     };
   }, [loading]);
   useEffect(() => {
-    document.title = `${pageName === "Home" ? "Frontend Developer — React & Next.js" : pageName} | David Atef`;
-    document.querySelector('meta[name="description"]').content =
-      project?.description ||
-      "David Atef — Frontend Developer working with React and Next.js. Explore my projects, experience and opportunities to work together.";
-    document.querySelector('meta[property="og:title"]').content =
-      document.title;
-    document.querySelector('meta[property="og:description"]').content =
-      document.querySelector('meta[name="description"]').content;
-  }, [pageName, project]);
-  useLayoutEffect(() => {
+    updateSeo(location.pathname);
+  }, [location.pathname]);
+  useClientLayoutEffect(() => {
     const old = history.scrollRestoration;
     history.scrollRestoration = "manual";
     return () => {
       history.scrollRestoration = old;
     };
   }, []);
-  useLayoutEffect(() => {
+  useClientLayoutEffect(() => {
     const restore = navigationType === "POP" && positions.has(location.key);
     if (restore)
       window.scrollTo({
@@ -161,7 +162,7 @@ export default function App() {
       {loading && <IntroLoader onComplete={completeIntro} />}
       <div
         ref={root}
-        inert={loading ? "" : undefined}
+        inert={loading && hydrated ? "" : undefined}
         className={contact ? "dark-page" : ""}
       >
         <a className="skip-link" href="#main-content">
