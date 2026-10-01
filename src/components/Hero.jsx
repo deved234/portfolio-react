@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { profile } from "../data/profile";
@@ -110,7 +111,7 @@ export default function Hero({ ready }) {
           <Globe />
         </span>
       </div>
-      <div className={styles.role} data-hero-reveal>
+      <div className={styles.role}>
         <svg
           className={styles.arrow}
           viewBox="0 0 32 32"
@@ -119,14 +120,26 @@ export default function Hero({ ready }) {
         >
           <path d="M5 5l22 22M10 27h17V10" />
         </svg>
-        <p>
-          {profile.title}
-          <br />
-          {profile.specialty}
+        <p className={styles.roleTitle}>{profile.title}</p>
+        <p className={styles.technologies}>React · Next.js · JavaScript</p>
+        <p className={styles.description}>
+          Building responsive interfaces and connected web applications.
         </p>
+        <div className={styles.actions}>
+          <Link to="/#work">
+            Explore my work <span aria-hidden="true">↗</span>
+          </Link>
+          <a
+            href="/documents/David-Atef-CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View CV <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
       <h1 id="hero-title" className="sr-only">
-        {profile.name} — {profile.title}, {profile.specialty}
+        {profile.name} — {profile.title}, {profile.specialty}, JavaScript
       </h1>
       <div className={styles.marquee} aria-hidden="true">
         <div ref={track} className={styles.track}>

@@ -169,9 +169,16 @@ export default function Work() {
               <ProjectMedia project={p} />
               <span className="view-badge">View project ↗</span>
             </div>
-            <h3>{p.name}</h3>
+            <div className="work-summary">
+              <h3>{p.name}</h3>
+              <p>{p.summary}</p>
+            </div>
             <span className="work-role">{p.role}</span>
-            <span className="work-stack">{p.category}</span>
+            <ul className="work-stack" aria-label={`${p.name} technologies`}>
+              {p.featuredStack.map((tool) => (
+                <li key={tool}>{tool}</li>
+              ))}
+            </ul>
             <span className="work-arrow" aria-hidden="true">
               ↗
             </span>

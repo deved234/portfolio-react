@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
+import Toolkit from "../components/Toolkit";
 import Magnetic from "../components/motion/Magnetic";
 export default function Home({ ready }) {
   return (
@@ -16,10 +17,9 @@ export default function Home({ ready }) {
         </h2>
         <div>
           <p data-reveal>
-            I’m David Atef, a frontend developer based in Assiut, Egypt,
-            working with React and Next.js.
-            Currently a Frontend Developer Trainee at Reservya, bringing
-            interfaces to life with care for the details.
+            I’m David Atef, a frontend developer based in Assiut, Egypt, working
+            with React and Next.js. Currently a Frontend Developer Trainee at
+            Reservya, bringing interfaces to life with care for the details.
           </p>
           <p className="availability">
             <i />
@@ -32,6 +32,7 @@ export default function Home({ ready }) {
           </Magnetic>
         </div>
       </section>
+      <Toolkit />
       <Work />
     </>
   );

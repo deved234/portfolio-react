@@ -1,6 +1,8 @@
 export const projects = [
   {
     slug: "luxe-retail",
+    summary: "A React storefront with cart, wishlist and checkout.",
+    featuredStack: ["React", "Zustand", "TanStack Query", "GSAP"],
     name: "Luxe Retail",
     category: "React",
     type: "E-commerce",
@@ -31,6 +33,9 @@ export const projects = [
   },
   {
     slug: "shopzone",
+    summary:
+      "A bilingual marketplace with customer, seller and admin interfaces.",
+    featuredStack: ["Next.js", "Zustand", "Zod", "next-intl"],
     name: "ShopZone",
     category: "Next.js",
     type: "Multi-vendor commerce",
@@ -62,6 +67,9 @@ export const projects = [
   },
   {
     slug: "course-platform",
+    summary:
+      "Course discovery, lessons and progress for students and instructors.",
+    featuredStack: ["Next.js", "JavaScript", "Tailwind CSS", "GSAP"],
     name: "Online Course Platform",
     category: "Next.js",
     type: "Learning platform",
@@ -85,6 +93,9 @@ export const projects = [
   },
   {
     slug: "saint-george-market",
+    summary:
+      "Product browsing, cart and checkout connected to marketplace APIs.",
+    featuredStack: ["React", "Redux Toolkit", "Axios", "JavaScript"],
     name: "Saint George Market",
     category: "React",
     type: "Online marketplace",
@@ -107,6 +118,8 @@ export const projects = [
   },
   {
     slug: "speak-english",
+    summary: "Responsive learning pages with clear navigation.",
+    featuredStack: ["React", "JavaScript", "React Router", "CSS"],
     name: "Speak English",
     category: "React",
     type: "Language learning",
@@ -130,6 +143,8 @@ export const projects = [
   },
   {
     slug: "gaming-hub",
+    summary: "A responsive gaming website with JavaScript interactions.",
+    featuredStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
     name: "Gaming Hub",
     category: "HTML / CSS",
     type: "Gaming website",
@@ -153,6 +168,9 @@ export const projects = [
   },
   {
     slug: "medinest",
+    summary:
+      "A responsive healthcare landing page with clear content structure.",
+    featuredStack: ["HTML", "CSS"],
     name: "MediNest",
     category: "HTML / CSS",
     type: "Healthcare website",

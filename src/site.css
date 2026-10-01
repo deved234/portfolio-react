@@ -1328,3 +1328,105 @@ section[tabindex="-1"]:focus {
     font-size: 14px;
   }
 }
+
+/* Project summaries expose the implementation before opening a case study. */
+.work-columns,
+.work-items.list .work-item {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr) minmax(0, 1.1fr) 25px;
+}
+.work-summary {
+  min-width: 0;
+}
+.work-summary > p {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #62646a;
+  margin-top: 14px;
+}
+.work-stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: flex-start;
+}
+.work-stack li {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 6px 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.grid .work-summary {
+  grid-column: 1 / -1;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.grid .work-summary h3 {
+  border: 0;
+  padding-bottom: 0;
+}
+.grid .work-stack {
+  grid-column: 1 / -1;
+}
+.grid .work-role {
+  grid-column: 1 / -1;
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .work-items.list .work-item {
+    padding-inline: 10px;
+    gap: 14px;
+  }
+  .work-columns {
+    padding-inline: 10px;
+    gap: 14px;
+  }
+  .work-summary > p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .work-items.list .work-item,
+  .work-items.grid .work-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-summary {
+    grid-column: 1 / -1;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-summary h3,
+  .grid .work-summary h3 {
+    padding-bottom: 0;
+    border: 0;
+  }
+  .work-summary > p {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .work-stack,
+  .work-role {
+    grid-column: 1 / -1;
+  }
+  .work-role {
+    font-size: 12px;
+  }
+}
+
+.backend-background {
+  margin-top: 42px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.backend-background h3 {
+  font-size: 22px;
+  letter-spacing: -0.025em;
+}
+.backend-background p {
+  max-width: 650px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #62646a;
+  margin-block: 16px 24px;
+}

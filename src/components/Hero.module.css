@@ -228,3 +228,155 @@
     will-change: auto;
   }
 }
+
+/* Keep the professional introduction readable independently of the marquee. */
+.role {
+  left: auto;
+  right: 4%;
+  top: 25%;
+  width: min(29%, 390px);
+  padding: 24px;
+  background: #1c1d20ed;
+  border-radius: 3px;
+  letter-spacing: normal;
+}
+.role .arrow {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 22px;
+}
+.roleTitle {
+  font-size: clamp(24px, 2.3vw, 35px);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+.technologies {
+  font-size: clamp(12px, 1.2vw, 16px);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+.description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d3d4d7;
+  margin-top: 14px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 24px;
+}
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  font-size: 12px;
+  border-bottom: 1px solid #ffffff65;
+}
+.actions a:hover {
+  border-color: white;
+}
+.actions a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .role {
+    right: 25px;
+    width: 280px;
+    top: 22%;
+    padding: 20px;
+  }
+  .location {
+    top: 30%;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 820px;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 48% 0 0;
+    background: linear-gradient(transparent, #141517ed 80%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .role {
+    top: auto;
+    left: 22px;
+    right: 22px;
+    bottom: 55px;
+    width: auto;
+    padding: 0;
+    background: none;
+  }
+  .role .arrow {
+    display: none;
+  }
+  .roleTitle {
+    font-size: 29px;
+  }
+  .technologies {
+    font-size: 15px;
+    margin-top: 9px;
+  }
+  .description {
+    max-width: 300px;
+    margin-top: 10px;
+  }
+  .actions {
+    margin-top: 12px;
+    gap: 24px;
+  }
+  .marquee {
+    bottom: 285px;
+  }
+  .mobileGlobe {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .hero {
+    min-height: 900px;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 0;
+    background: linear-gradient(transparent, #141517ed 85%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .role {
+    top: auto;
+    bottom: 65px;
+    left: 30px;
+    right: 30px;
+    width: auto;
+    padding: 0;
+    background: none;
+  }
+  .role .arrow {
+    display: none;
+  }
+  .roleTitle {
+    font-size: 32px;
+  }
+  .technologies {
+    font-size: 16px;
+  }
+  .description {
+    max-width: 390px;
+  }
+  .actions {
+    margin-top: 12px;
+  }
+  .marquee {
+    bottom: 300px;
+  }
+}

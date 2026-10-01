@@ -146,12 +146,21 @@ export default function About() {
             "GSAP",
             "REST APIs",
             "Git & GitHub",
-            "Node.js",
-            "Express",
-            "MongoDB",
           ].map((s) => (
             <span key={s}>{s}</span>
           ))}
+        </div>
+        <div className="backend-background">
+          <h3>Full-stack background</h3>
+          <p>
+            My Node.js, Express and MongoDB project experience helps me connect
+            frontend interfaces to the services behind them.
+          </p>
+          <div className="stack-tags">
+            {["Node.js", "Express", "MongoDB"].map((tool) => (
+              <span key={tool}>{tool}</span>
+            ))}
+          </div>
         </div>
       </section>
     </article>
