@@ -59,6 +59,10 @@ export default function SiteFooter({ compact = false }) {
         <div>
           <span className="eyebrow">Version</span>
           <p>{new Date().getFullYear()} © David Atef</p>
+          <div className="footer-privacy">
+            <Link to="/privacy">Privacy</Link>
+            <button type="button" onClick={() => window.dispatchEvent(new Event("portfolio:analytics-settings"))}>Analytics settings</button>
+          </div>
         </div>
         <div>
           <span className="eyebrow">Local time · Egypt</span>

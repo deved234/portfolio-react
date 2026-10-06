@@ -22,6 +22,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import AnalyticsConsent from "./components/AnalyticsConsent";
+import { trackPage } from "./lib/analytics.js";
 import { projects } from "./data/projects";
 import useReducedMotion from "./hooks/useReducedMotion";
 import useSmoothScroll from "./hooks/useSmoothScroll";
@@ -88,6 +91,7 @@ export default function App() {
   }, [loading]);
   useEffect(() => {
     updateSeo(location.pathname);
+    trackPage();
   }, [location.pathname]);
   useClientLayoutEffect(() => {
     const old = history.scrollRestoration;
@@ -174,6 +178,7 @@ export default function App() {
             <Route path="/" element={<Home ready={!loading} />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/projects/:slug" element={<Project />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -183,6 +188,7 @@ export default function App() {
           <span>• {pageName}</span>
         </div>
       </div>
+      <AnalyticsConsent ready={!loading} />
     </>
   );
 }

@@ -8,7 +8,7 @@ import {
   siteUrl,
 } from "../src/data/seo.js";
 
-assert.equal(new Set(routes).size, 10);
+assert.equal(new Set(routes).size, 11);
 const titles = new Set();
 for (const route of routes) {
   const html = await readFile(
@@ -59,5 +59,5 @@ assert.ok(!getSeo("/projects/missing").known);
 assert.equal(getSeo("/about/?test=1#test").url, `${siteUrl}/about`);
 assert.ok((await stat("dist/social-cover.png")).size > 0);
 console.log(
-  "SEO verification passed: 10 complete HTML pages, unique metadata, canonical URLs, JSON-LD, verification token, sitemap, robots, social image and noindex 404/preview.",
+  `SEO verification passed: ${routes.length} complete HTML pages, unique metadata, canonical URLs, JSON-LD, verification token, sitemap, robots, social image and noindex 404/preview.`,
 );

@@ -6,12 +6,14 @@ export const routes = [
   "/",
   "/about",
   "/contact",
+  "/privacy",
   ...projects.map((p) => `/projects/${p.slug}`),
 ];
 export function getSeo(path) {
   const pathname = path.split(/[?#]/)[0].replace(/\/+$/, "") || "/";
   const project = projects.find((p) => pathname === `/projects/${p.slug}`);
   const pages = {
+    "/privacy": ["Privacy policy | David Atef", "How David Atef’s portfolio handles optional Google Analytics, contact messages and browser preferences. Manage your analytics choices."],
     "/": [
       "David Atef — Frontend Developer | React & Next.js",
       "David Atef is a frontend developer in Assiut, Egypt, working with React and Next.js. Explore seven projects and experience. Available for remote and on-site work.",
@@ -91,7 +93,7 @@ export function getSeo(path) {
         {
           "@type": "ListItem",
           position: 2,
-          name: project?.name || (pathname === "/about" ? "About" : "Contact"),
+          name: project?.name || ({ "/about": "About", "/contact": "Contact", "/privacy": "Privacy" }[pathname]),
           item: url,
         },
       ],

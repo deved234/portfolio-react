@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { profile } from "../data/profile";
 import Magnetic from "../components/motion/Magnetic";
+import { trackEvent } from "../lib/analytics.js";
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
@@ -24,6 +25,7 @@ export default function Contact() {
             "Your message could not be sent. Please email me directly.",
         );
       setStatus("success");
+      trackEvent("generate_lead", { method: "contact_form" });
       setMessage("Thanks for reaching out. Your message has been sent.");
       form.reset();
     } catch (error) {
