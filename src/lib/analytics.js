@@ -2,11 +2,34 @@ export const measurementId = import.meta.env?.VITE_GA_MEASUREMENT_ID || "G-8CF6F
 export const consentKey = "david-portfolio:analytics-consent:v1";
 const productionHost = "portfolio-react-theta-hazel-94.vercel.app";
 
+// Public campaign labels only; arbitrary query parameters never reach Analytics.
+export function readCampaign(url) {
+  const fields = {
+    utm_source: "campaign_source",
+    utm_medium: "campaign_medium",
+    utm_campaign: "campaign_name",
+    utm_content: "campaign_content",
+    utm_term: "campaign_term",
+    utm_id: "campaign_id",
+  };
+  let parameters;
+  try { parameters = new URL(url).searchParams; } catch { return {}; }
+  const campaign = {};
+  for (const [query, field] of Object.entries(fields)) {
+    const value = parameters.get(query)?.trim();
+    if (value && /^[\p{L}\p{N}][\p{L}\p{N}._ -]{0,99}$/u.test(value)
+      && !/^[\d .()-]{7,}$/.test(value)) campaign[field] = value;
+  }
+  return campaign;
+}
+
 // Keep tracking isolated from React renders, StrictMode and server rendering.
 export function createAnalytics(win, doc, id, enabled) {
   let active = false;
   let initialized = false;
   let lastPage = null;
+  // Capture the entry campaign before consent or SPA navigation changes the URL.
+  const entryCampaign = readCampaign(win.location.href);
   const cleanUrl = (value) => {
     try {
       const url = new URL(value, win.location.origin);
@@ -46,6 +69,7 @@ export function createAnalytics(win, doc, id, enabled) {
         allow_ad_personalization_signals: false,
         page_location: cleanUrl(win.location.href),
         page_referrer: cleanUrl(doc.referrer),
+        ...entryCampaign,
       });
       const script = doc.createElement("script");
       script.async = true;

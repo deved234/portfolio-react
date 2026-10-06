@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createAnalytics, classifyLink } from "../src/lib/analytics.js";
+import { createAnalytics, classifyLink, readCampaign } from "../src/lib/analytics.js";
 
 function fixture(enabled = true) {
   const scripts = [];
@@ -52,4 +52,35 @@ test("public interactions are classified without personal contact data or arbitr
   assert.deepEqual(classifyLink("https://example.com/?secret=yes", "/projects/shopzone", origin), ["project_link_click", { project_slug: "shopzone", link_type: "live" }]);
   assert.equal(classifyLink("/about", "/", origin), null);
   assert.equal(classifyLink("javascript:alert(1)", "/", origin), null);
+});
+
+test("UTM labels map to native GA4 campaign fields without forwarding private query values", () => {
+  const url = "https://example.com/?utm_source=linkedin&utm_medium=social&utm_campaign=portfolio&utm_content=profile&utm_term=frontend%20developer&utm_id=portfolio-v1&email=private@example.com&token=secret#private";
+  assert.deepEqual(readCampaign(url), {
+    campaign_source: "linkedin", campaign_medium: "social", campaign_name: "portfolio",
+    campaign_content: "profile", campaign_term: "frontend developer", campaign_id: "portfolio-v1",
+  });
+  assert.deepEqual(readCampaign("https://example.com/?utm_source=private@example.com&utm_content=https%3A%2F%2Fsecret.com&utm_term=201234567890&utm_medium=social"), { campaign_medium: "social" });
+  assert.deepEqual(readCampaign("https://example.com/?utm_campaign=" + "a".repeat(101)), {});
+  assert.deepEqual(readCampaign("invalid"), {});
+});
+
+test("entry campaign survives navigation before consent without contaminating page URLs", () => {
+  const scripts = [];
+  const win = { location: new URL("https://example.com/?utm_source=linkedin&utm_medium=social&utm_campaign=portfolio&utm_content=profile&email=private@example.com") };
+  const doc = { title: "About", referrer: "https://www.linkedin.com/?secret=value", cookie: "", createElement: () => ({}), head: { appendChild: (script) => scripts.push(script) } };
+  const tracker = createAnalytics(win, doc, "G-8CF6F9426E", true);
+  win.location = new URL("https://example.com/about?utm_source=internal-link");
+  tracker.start();
+  const commands = win.dataLayer.map(args => [...args]);
+  const config = commands.find(args => args[0] === "config")[2];
+  assert.equal(config.campaign_source, "linkedin");
+  assert.equal(config.campaign_content, "profile");
+  assert.equal(config.page_location, "https://example.com/about");
+  assert.equal(config.page_referrer, "https://www.linkedin.com/");
+  win.location = new URL("https://example.com/contact"); tracker.page();
+  assert.equal(commands.filter(args => args[0] === "config").length, 1);
+  assert.equal(JSON.stringify(win.dataLayer).includes("private@example.com"), false);
+  assert.equal(JSON.stringify(win.dataLayer).includes("internal-link"), false);
+  assert.equal(scripts.length, 1);
 });

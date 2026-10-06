@@ -9,6 +9,12 @@ Google's script loads only after the visitor accepts analytics. Rejecting leaves
 
 React route changes send one `page_view` after the page metadata updates. Duplicate effects and hash-only changes do not send a second view. URLs and referrers omit queries and hashes. The first referrer is the referring site; later views reference the preceding portfolio page.
 
+Entry-link UTM labels are captured in memory before consent or SPA navigation changes the URL, and passed through native GA4 `campaign_source`, `campaign_medium`, `campaign_name`, `campaign_content`, `campaign_term` and `campaign_id` configuration fields. No tag, event or new storage is created before consent. Unrelated query parameters remain excluded. Campaign labels allow up to 100 letters, numbers, spaces, dots, underscores and hyphens; email addresses, URLs and phone-like numeric labels are excluded. Do not put personal information in UTMs. Only tag incoming links shared outside this portfolio; internal links must not introduce campaign labels.
+
+Use **Reports > Understand web and/or app traffic > Traffic acquisition**, then select **Session source / medium** or **Session campaign**. To distinguish placements such as profile vs post, use **Explore > Free form** with **Session manual ad content** alongside session source / medium and sessions. Standard attribution reporting may take 24–48 hours. The report records attributable visits after consent, not named people. Referrer suppression can produce direct traffic; a public UTM-tagged entry link provides explicit source labels.
+
+Ready-to-share URLs and naming guidance are in [analytics-links.md](analytics-links.md).
+
 Events:
 - `page_view`: route, title and previous page.
 - `cv_download`: CV link click (not proof of a completed download).
