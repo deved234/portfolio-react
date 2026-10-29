@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
+import { projects } from "../src/data/projects.js";
 import {
   routes,
   getSeo,
@@ -8,7 +9,15 @@ import {
   siteUrl,
 } from "../src/data/seo.js";
 
-assert.equal(new Set(routes).size, 11);
+assert.equal(new Set(routes).size, routes.length);
+assert.equal(routes.length, projects.length + 4);
+assert.equal(new Set(projects.map((project) => project.slug)).size, projects.length);
+for (const project of projects) {
+  if (!project.image) continue;
+  assert.ok((await stat(`public${project.image}`)).size > 0, `${project.slug}: missing preview`);
+  if (project.mobileImage !== false)
+    assert.ok((await stat(`public/projects/${project.slug}-mobile.webp`)).size > 0, `${project.slug}: missing mobile preview`);
+}
 const titles = new Set();
 for (const route of routes) {
   const html = await readFile(

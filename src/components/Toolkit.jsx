@@ -6,6 +6,7 @@ import {
   ListChecks,
   GitBranch,
   ArrowUpRight,
+  Monitor,
 } from "lucide-react";
 import { projects } from "../data/projects";
 import "./Toolkit.css";
@@ -31,6 +32,15 @@ const core = [
   },
 ];
 const groups = [
+  {
+    title: "Desktop & typed interfaces",
+    icon: Monitor,
+    tools: ["TypeScript", "Electron", "Vitest"],
+    proof: [
+      ["rased", "React and TypeScript in a released Windows desktop application."],
+      ["mova-agency", "Typed components for an interactive agency frontend."],
+    ],
+  },
   {
     title: "Frontend foundations",
     icon: Code2,

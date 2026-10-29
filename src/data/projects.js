@@ -1,5 +1,207 @@
 export const projects = [
   {
+    "slug": "rased",
+    "name": "RASED",
+    "summary": "A Windows desktop app for discovering and tracking freelance opportunities.",
+    "category": "Desktop",
+    "type": "Desktop application",
+    "role": "Developer",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Electron",
+      "Electron Vite",
+      "Vitest"
+    ],
+    "featuredStack": [
+      "React",
+      "TypeScript",
+      "Electron",
+      "Vitest"
+    ],
+    "color": "#e0e5df",
+    "image": "/projects/rased.webp",
+    "imageAlt": "RASED Arabic desktop interface with demonstration project data",
+    "imageWidth": 1528,
+    "imageHeight": 1028,
+    "mobileImage": false,
+    "github": "https://github.com/deved234/rased",
+    "live": "https://github.com/deved234/rased/releases",
+    "liveLabel": "View Windows releases",
+    "intro": "Freelance opportunities, brought into one desktop workspace.",
+    "description": "A local Windows application that brings freelance opportunities from Mostaql, Nafezly, Khamsat and KAF into an Arabic and English interface, with filtering, search and desktop notifications.",
+    "contribution": "I developed the application, including its React and TypeScript interface, Electron desktop integration and the workflows for discovering opportunities, reviewing project details and managing preferences.",
+    "highlights": [
+      "Arabic and English desktop interfaces",
+      "Opportunity filtering, search and desktop notifications",
+      "Local preferences and background monitoring",
+      "Published Windows releases and application updates"
+    ]
+  },
+  {
+    "slug": "egyzone-storefront",
+    "name": "EGYZone Storefront",
+    "summary": "An Arabic, English and French fashion storefront connected to marketplace APIs.",
+    "category": "React",
+    "type": "Fashion marketplace frontend",
+    "role": "Frontend Developer",
+    "stack": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand",
+      "Axios",
+      "i18next",
+      "React Hook Form",
+      "Zod"
+    ],
+    "featuredStack": [
+      "React",
+      "JavaScript",
+      "Zustand",
+      "i18next"
+    ],
+    "color": "#e6e0d3",
+    "image": "/projects/egyzone-storefront.webp",
+    "imageWidth": 1276,
+    "imageHeight": 480,
+    "mobileWidth": 390,
+    "mobileHeight": 520,
+    "live": "https://reservya-task.vercel.app",
+    "intro": "One storefront, three languages, connected shopping flows.",
+    "description": "A fashion marketplace frontend with Arabic, English and French experiences, RTL and LTR layouts, customer accounts, product browsing, cart and checkout interfaces connected to backend APIs.",
+    "contribution": "I developed the React frontend, organising reusable components, localized navigation, client state, validated forms and API integration across the shopping journey.",
+    "highlights": [
+      "Arabic, English and French with RTL/LTR layouts",
+      "Product discovery, customer account and shopping interfaces",
+      "Shared client state and API integration",
+      "Validated forms and responsive layouts"
+    ],
+    "note": "Catalogue and checkout availability depend on the connected backend. The preview shows the storefront hero; live catalogue requests were returning authorization errors during capture."
+  },
+  {
+    "slug": "egyzone-dashboard",
+    "name": "EGYZone Dashboard",
+    "summary": "Admin and merchant interfaces for managing a multi-vendor marketplace.",
+    "category": "React",
+    "type": "Marketplace dashboard",
+    "role": "Frontend Developer",
+    "stack": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand",
+      "Axios",
+      "Recharts",
+      "React Hook Form",
+      "Zod"
+    ],
+    "featuredStack": [
+      "React",
+      "Recharts",
+      "Zustand",
+      "Zod"
+    ],
+    "color": "#e2e0e8",
+    "image": "/projects/egyzone-dashboard.webp",
+    "imageAlt": "EGYZone Dashboard public sign-in screen",
+    "mobileImage": false,
+    "imageWidth": 1536,
+    "imageHeight": 682,
+    "live": "https://egyzone-dashboard.vercel.app",
+    "liveLabel": "View sign-in screen",
+    "intro": "Making marketplace operations easier to navigate.",
+    "description": "A React dashboard frontend with admin and merchant interfaces for marketplace operations, including product and category management, order views, forms and reporting components.",
+    "contribution": "I built reusable dashboard components, tables, form screens, role-aware navigation and API-connected views, with charts for presenting marketplace information.",
+    "highlights": [
+      "Admin and merchant navigation and route guards",
+      "Reusable tables, pagination and management forms",
+      "Reporting components built with Recharts",
+      "Form validation with React Hook Form and Zod"
+    ],
+    "note": "The public preview shows the sign-in screen. Operational views require authorized access; no private account or merchant data is included."
+  },
+  {
+    "slug": "sad-media",
+    "name": "Sad Media",
+    "summary": "An Arabic creative-agency website with motion, video portfolios and service packages.",
+    "category": "React",
+    "type": "Creative agency website",
+    "role": "Frontend Developer",
+    "stack": [
+      "React",
+      "JavaScript",
+      "TanStack Start",
+      "TanStack Router",
+      "Tailwind CSS",
+      "GSAP",
+      "Lenis"
+    ],
+    "featuredStack": [
+      "React",
+      "TanStack Start",
+      "GSAP",
+      "Tailwind CSS"
+    ],
+    "color": "#ede0df",
+    "image": "/projects/sad-media.webp",
+    "imageWidth": 1521,
+    "imageHeight": 675,
+    "mobileWidth": 375,
+    "mobileHeight": 811,
+    "live": "https://enchanting-layout-kit.vercel.app",
+    "github": "https://github.com/deved234/enchanting-layout-kit",
+    "intro": "An Arabic-first stage for motion and creative work.",
+    "description": "An Arabic creative-agency website presenting motion graphics and UGC services through video portfolios, service packages, expandable FAQs and animated sections.",
+    "contribution": "I worked on the frontend experience, bringing reusable React sections, RTL layouts, portfolio interactions and scroll-based motion into a responsive website.",
+    "highlights": [
+      "Arabic-first content and RTL layouts",
+      "Motion graphics and UGC portfolio sections",
+      "Service packages, FAQs and contact links",
+      "GSAP motion and smooth scrolling"
+    ]
+  },
+  {
+    "slug": "mova-agency",
+    "name": "MOVA Agency",
+    "summary": "A video-editing agency website with interactive comparisons and a style playground.",
+    "category": "React",
+    "type": "Agency portfolio frontend",
+    "role": "Frontend Developer",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Motion"
+    ],
+    "featuredStack": [
+      "React",
+      "TypeScript",
+      "Motion",
+      "Tailwind CSS"
+    ],
+    "color": "#dedee9",
+    "image": "/projects/mova-agency.webp",
+    "imageWidth": 1521,
+    "imageHeight": 675,
+    "mobileWidth": 375,
+    "mobileHeight": 811,
+    "github": "https://github.com/deved234/mova-agency",
+    "live": "https://mova-agency.vercel.app",
+    "intro": "Helping creative work speak through interaction.",
+    "description": "A video-editing agency frontend with campaign showcases, before-and-after comparisons, an interactive style playground and a booking modal interface.",
+    "contribution": "I developed the React and TypeScript interface, structuring the campaign presentation and interactive components with responsive layouts and motion.",
+    "highlights": [
+      "Interactive before-and-after comparisons",
+      "Campaign showcases and reusable content components",
+      "Style playground and booking modal interface",
+      "Responsive layouts with Motion animations"
+    ]
+  },
+  {
     slug: "luxe-retail",
     summary: "A React storefront with cart, wishlist and checkout.",
     featuredStack: ["React", "Zustand", "TanStack Query", "GSAP"],

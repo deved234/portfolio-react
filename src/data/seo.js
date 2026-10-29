@@ -16,7 +16,7 @@ export function getSeo(path) {
     "/privacy": ["Privacy policy | David Atef", "How David Atef’s portfolio handles optional Google Analytics, contact messages and browser preferences. Manage your analytics choices."],
     "/": [
       "David Atef — Frontend Developer | React & Next.js",
-      "David Atef is a frontend developer in Assiut, Egypt, working with React and Next.js. Explore seven projects and experience. Available for remote and on-site work.",
+      `David Atef is a frontend developer in Assiut, Egypt. Explore ${projects.length} web and desktop projects using React, Next.js and JavaScript. Available for remote and on-site work.`,
     ],
     "/about": [
       "About David Atef | Frontend Developer in Egypt",

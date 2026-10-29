@@ -4,9 +4,9 @@ export default function ProjectMedia({ project, eager = false }) {
       {project.image ? (
         <img
           src={project.image}
-          alt={`${project.name} website preview`}
-          width="1440"
-          height="1000"
+          alt={project.imageAlt || `${project.name} website preview`}
+          width={project.imageWidth || 1440}
+          height={project.imageHeight || 1000}
           loading={eager ? "eager" : "lazy"}
         />
       ) : (

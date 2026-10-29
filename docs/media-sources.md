@@ -22,3 +22,20 @@ The user approved keeping the Saint George cover as-is; no screenshot is pending
 Its original URL remains unchanged. The course repository's API
 deployment URL is retained as `referenceUrl`; it is not labelled as a working
 frontend demo.
+
+
+## Additions â€” 29 October 2026
+
+Five additional projects bring the collection to twelve. Screenshots are real captures, optimized as WebP. No private repository source is included in the portfolio.
+
+| Project | Capture source | Scope |
+| --- | --- | --- |
+| RASED | Public `deved234/rased/docs/images/projects.png` | Official repository screenshot, explicitly using demonstration data; desktop-only application, no invented mobile preview. |
+| EGYZone Storefront | https://reservya-task.vercel.app | Desktop hero cropped to exclude an existing account greeting. Mobile hero captured below the header for the same reason. Live catalogue requests returned 401; this limitation is stated on the project page. |
+| EGYZone Dashboard | https://egyzone-dashboard.vercel.app | Public sign-in screen on desktop only; the current mobile sign-in preview was not suitable for a gallery. No developer login shortcuts or authenticated screens used. |
+| Sad Media | https://enchanting-layout-kit.vercel.app | Desktop and mobile home after dismissing the entry screen. |
+| MOVA Agency | https://mova-agency.vercel.app | Desktop and mobile home. |
+
+Captures retain their actual dimensions. The EGYZone sources remain private and only their existing public demo links are listed. RASED links to Windows releases instead of being presented as a website. The older seven projects and Saint George cover remain unchanged.
+
+Wyze Bundle Builder was excluded from this addition at the user’s request before publication.

@@ -35,3 +35,18 @@ is outstanding; its approved URL remains unchanged.
 This is a local review build, not a deployment. Live inbox delivery, hosting
 rewrites on an actual Vercel deployment, Safari and real iOS hardware have not
 been tested. No cross-device performance score or pixel-perfect match is claimed.
+
+
+## Project collection update — 29 October 2026
+
+Added RASED, EGYZone Storefront, EGYZone Dashboard, Sad Media and MOVA Agency. Wyze was excluded at the user's request. The collection now contains twelve projects and sixteen prerendered public routes.
+
+- Production build and all 16 Node tests pass.
+- SEO verification covers unique metadata, canonicals, structured data, sitemap, robots, home links and real preview files for every project.
+- New public previews use WebP screenshots; private source repositories are not linked or published.
+- Desktop category and dynamic project counts replace hard-coded collection totals.
+- RASED has a desktop screenshot and Windows release link, without a fictitious mobile preview.
+- EGYZone previews explicitly describe current backend/access limitations and do not expose account data.
+- Browser review covers desktop grid, mobile layout and the five new project pages.
+
+These checks verify the portfolio presentation; they do not assert complete functionality of the linked external projects.

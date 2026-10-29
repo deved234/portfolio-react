@@ -37,7 +37,7 @@ export default function Project() {
               target="_blank"
               rel="noreferrer"
             >
-              Visit website ↗
+              {project.liveLabel || "Visit website"} ↗
             </a>
           )}
           {project.github && (
@@ -61,6 +61,7 @@ export default function Project() {
           <p>{project.description}</p>
           <h3>My contribution</h3>
           <p>{project.contribution}</p>
+          {project.note && <p className="project-note">{project.note}</p>}
         </div>
       </section>
       <section className="project-details section-shell">
@@ -81,7 +82,7 @@ export default function Project() {
           </div>
         </div>
       </section>
-      {project.image && (
+      {project.image && project.mobileImage !== false && (
         <section
           className="mobile-gallery"
           style={{ background: project.color }}
@@ -105,8 +106,8 @@ export default function Project() {
               <img
                 src={`/projects/${project.slug}-mobile.webp`}
                 alt={`${project.name} mobile interface`}
-                width="390"
-                height="844"
+                width={project.mobileWidth || 390}
+                height={project.mobileHeight || 844}
                 loading="lazy"
               />
               <figcaption>Mobile preview · 390 px</figcaption>
@@ -121,7 +122,7 @@ export default function Project() {
           <span aria-hidden="true">↗</span>
         </Link>
         <Link className="pill" to="/#work">
-          All projects <sup>7</sup>
+          All projects <sup>{projects.length}</sup>
         </Link>
       </section>
     </article>

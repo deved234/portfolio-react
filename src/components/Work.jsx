@@ -7,7 +7,7 @@ import { projects } from "../data/projects";
 import ProjectMedia from "./ProjectMedia";
 import useReducedMotion from "../hooks/useReducedMotion";
 
-const filters = ["All", "React", "Next.js", "HTML / CSS"];
+const filters = ["All", ...new Set(projects.map((project) => project.category))];
 const subscribe = () => () => {};
 function useSavedChoice(key, fallback) {
   // Hydration starts with the server value; later route mounts read session state immediately.

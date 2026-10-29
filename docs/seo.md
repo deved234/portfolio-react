@@ -1,6 +1,6 @@
 # SEO and indexing
 
-The build renders all ten public routes to HTML before deployment. React hydrates that HTML to retain animations, project filters and client-side navigation. Each page has its own title, description, canonical URL, social sharing metadata and structured data. The home and about pages describe David using ProfilePage/Person; project pages include the project and breadcrumbs. Structured data does not guarantee a special search appearance.
+The build renders all sixteen public routes to HTML before deployment. React hydrates that HTML to retain animations, project filters and client-side navigation. Each page has its own title, description, canonical URL, social sharing metadata and structured data. The home and about pages describe David using ProfilePage/Person; project pages include the project and breadcrumbs. Structured data does not guarantee a special search appearance.
 
 `src/data/seo.js` is the source for the public production URL and Google verification token. `src/data/projects.js` is the source for project pages and their sitemap entries. The public verification token is intentionally committed; it is not a password or API key. Vercel preview builds receive noindex metadata. Update the production URL if a custom domain is introduced, redirect the old hostname to the new one, and add the new property in Search Console.
 
@@ -20,6 +20,6 @@ Run `npm run build`, `npm test` and `npm run test:seo`. Then inspect the publish
 
 ## Content and reputation
 
-Keep the portfolio URL on your GitHub profile and LinkedIn profile, and add relevant project-page links in repositories you own. Describe real implementation decisions, challenges and results when available; do not fabricate metrics or add keyword lists. All seven projects already have indexable detail pages, so no separate project listing page is required. Keep the existing URLs unless there is a clear reason to migrate. A custom domain is optional and is not a ranking guarantee.
+Keep the portfolio URL on your GitHub profile and LinkedIn profile, and add relevant project-page links in repositories you own. Describe real implementation decisions, challenges and results when available; do not fabricate metrics or add keyword lists. All twelve projects already have indexable detail pages, so no separate project listing page is required. Keep the existing URLs unless there is a clear reason to migrate. A custom domain is optional and is not a ranking guarantee.
 
 Recommended initial focus: searches for David Atef, David Atef frontend developer, and David Atef React/Next.js. Generic job-related queries are more competitive. Review progress in Search Console instead of promising a particular position or deadline.

@@ -14,7 +14,7 @@ npm test
 ```
 
 Routes: `/`, `/#work`, `/about`, `/contact`, `/projects/:slug`, and a catch-all 404.
-All seven projects live on Home. Project data and links are in `src/data/projects.js`;
+All twelve projects live on Home. Project data and links are in `src/data/projects.js`;
 personal details are in `src/data/profile.js`. The submitted CV is in
 `public/documents/David-Atef-CV.pdf`.
 
@@ -62,4 +62,4 @@ browser Back restores scroll position. No separate Work archive is created.
 
 ## SEO
 
-Production builds prerender ten public pages, unique metadata, JSON-LD, sitemap and robots.txt. See [SEO setup and Search Console](docs/seo.md). Run `npm run test:seo` after building.
+Production builds prerender sixteen public pages, unique metadata, JSON-LD, sitemap and robots.txt. See [SEO setup and Search Console](docs/seo.md). Run `npm run test:seo` after building.
