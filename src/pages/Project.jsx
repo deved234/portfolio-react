@@ -25,7 +25,7 @@ export default function Project() {
             <p>{project.type}</p>
           </div>
           <div>
-            <p className="eyebrow">Frontend</p>
+            <p className="eyebrow">Category</p>
             <p>{project.category}</p>
           </div>
         </div>

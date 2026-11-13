@@ -50,3 +50,10 @@ Added RASED, EGYZone Storefront, EGYZone Dashboard, Sad Media and MOVA Agency. W
 - Browser review covers desktop grid, mobile layout and the five new project pages.
 
 These checks verify the portfolio presentation; they do not assert complete functionality of the linked external projects.
+
+## Sufra and quick fixes — 13 November 2026
+
+- Added Sufra (public repository, sole contributor) as the first project; thirteen projects and seventeen prerendered public routes.
+- Removed dead live links: Saint George Market (domain does not resolve) and Speak English (Netlify host timed out).
+- Project detail label "Frontend" renamed to "Category", which is what it shows.
+- `vercel.json`: one-year immutable caching for hashed `/assets/*`, plus `nosniff`, `Referrer-Policy`, `X-Frame-Options`, `frame-ancestors`/`base-uri`/`form-action`/`object-src` CSP and `Permissions-Policy`. The CSP does not restrict scripts, so Google Analytics is unaffected. Header behaviour needs checking on the next Vercel deployment.

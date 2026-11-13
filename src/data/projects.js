@@ -1,5 +1,46 @@
 export const projects = [
   {
+    slug: "sufra",
+    name: "Sufra",
+    summary:
+      "A bilingual restaurant platform with branded sites, table booking and a page builder.",
+    category: "Next.js",
+    type: "Restaurant platform",
+    role: "Full Stack Developer",
+    stack: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "next-intl",
+      "Zod",
+      "dnd-kit",
+      "GSAP",
+      "Playwright",
+    ],
+    featuredStack: ["Next.js", "React", "MongoDB", "next-intl"],
+    color: "#f6e7dc",
+    image: "/projects/sufra.webp",
+    imageAlt:
+      "Sufra home page with restaurant search and dishes from the demo restaurants",
+    github: "https://github.com/deved234/sufra",
+    live: "https://sufra-sandy.vercel.app/en",
+    liveLabel: "Try the live demo",
+    intro: "Every restaurant gets its own site, menu and bookings.",
+    description:
+      "A multi-tenant restaurant platform in Arabic and English. Each restaurant gets a branded site with its menu and opening hours, visitors book tables from their account, and owners manage everything from a dashboard, including a drag-and-drop page builder. A temporary demo dashboard can be opened without an account.",
+    contribution:
+      "I built the whole application on my own: the Next.js App Router frontend with Arabic RTL and English, the restaurant dashboard and page builder, table booking that prevents overbooking with atomic MongoDB updates, accounts with email confirmation and Google sign-in, an admin panel, and a CI pipeline with unit, database and Playwright tests including axe accessibility checks.",
+    highlights: [
+      "Arabic (RTL) and English sites with hreflang",
+      "Drag-and-drop page and menu editors with undo and autosave",
+      "Table booking without overbooking, plus change requests",
+      "Owner dashboard, admin panel and no-account demo",
+      "CI with unit, database and Playwright accessibility tests",
+    ],
+  },
+  {
     "slug": "rased",
     "name": "RASED",
     "summary": "A Windows desktop app for discovering and tracking freelance opportunities.",
@@ -305,7 +346,7 @@ export const projects = [
     stack: ["React", "Vite", "React Router", "Redux Toolkit", "Axios"],
     color: "#d9dfd6",
     image: null,
-    live: "https://saintgeorgemarketplace.com/",
+    note: "The original Saint George Market website is no longer online, so this page describes the work without a live link.",
     intro: "A storefront built around an accessible shopping journey.",
     description:
       "An e-commerce marketplace with product listings, shopping-cart interactions and checkout interfaces.",
@@ -330,7 +371,6 @@ export const projects = [
     color: "#e6e0d9",
     image: "/projects/speak-english.webp",
     github: "https://github.com/deved234/speak-english",
-    live: "https://speekenglish.netlify.app/",
     intro: "A clear interface for an English-learning experience.",
     description:
       "An educational frontend that organises English-learning content into approachable pages and navigation.",

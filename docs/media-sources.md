@@ -19,7 +19,7 @@ and no external source repositories were changed. The local copies are outside
 the portfolio repository in `../output/project-sources/`.
 
 The user approved keeping the Saint George cover as-is; no screenshot is pending.
-Its original URL remains unchanged. The course repository's API
+The original domain no longer resolves, so its live link was removed on 13 November 2026. The course repository's API
 deployment URL is retained as `referenceUrl`; it is not labelled as a working
 frontend demo.
 
@@ -39,3 +39,13 @@ Five additional projects bring the collection to twelve. Screenshots are real ca
 Captures retain their actual dimensions. The EGYZone sources remain private and only their existing public demo links are listed. RASED links to Windows releases instead of being presented as a website. The older seven projects and Saint George cover remain unchanged.
 
 Wyze Bundle Builder was excluded from this addition at the user�s request before publication.
+
+## Additions — 13 November 2026
+
+Sufra brings the collection to thirteen. Captured 13 November 2026 from the public English home page with reduced motion, desktop 1440 × 1000 and mobile 390 × 844, converted to WebP.
+
+| Project | Capture source | Scope |
+| --- | --- | --- |
+| Sufra | https://sufra-sandy.vercel.app/en | Public home page with demo restaurants; no account or dashboard screens |
+
+Speak English no longer links to `speekenglish.netlify.app`, which timed out; its source link remains.
