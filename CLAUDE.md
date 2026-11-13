@@ -38,6 +38,7 @@ Before calling work done: `npm run build`, `npm test`, `npm run test:seo`.
 
 ### Data-driven content
 - `src/data/projects.js` is the single source for projects: Home grid, `/projects/:slug` pages, routes, sitemap, SEO titles, and category counts all derive from it. Adding a project requires `public/projects/<slug>.webp` and, unless `mobileImage: false`, `<slug>-mobile.webp` — `verify-seo.mjs` asserts these exist.
+- `src/data/caseStudies.js` — per-slug `challenge` + `decisions` rendered on project pages. Content must come from the project's repo or already-approved facts. `test:seo` requires a case study for every project and ≥180 words per project page (added because thin pages sat in "Discovered – currently not indexed").
 - `src/data/profile.js` — personal details/links.
 - `src/data/seo.js` — `siteUrl` (production URL), Google verification token, `routes`, `getSeo`/`seoHead` (titles, descriptions, canonical, OG, JSON-LD). Also `updateSeo(path)` updates head tags on client navigation. Every route must have a unique title (asserted by `test:seo`).
 - A new top-level page needs: a `<Route>` in `src/App.jsx`, an entry in `routes` and the `pages` map in `seo.js`. `verify-seo.mjs` asserts `routes.length === projects.length + 4`; update that if the static page count changes.

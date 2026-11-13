@@ -57,3 +57,13 @@ These checks verify the portfolio presentation; they do not assert complete func
 - Removed dead live links: Saint George Market (domain does not resolve) and Speak English (Netlify host timed out).
 - Project detail label "Frontend" renamed to "Category", which is what it shows.
 - `vercel.json`: one-year immutable caching for hashed `/assets/*`, plus `nosniff`, `Referrer-Policy`, `X-Frame-Options`, `frame-ancestors`/`base-uri`/`form-action`/`object-src` CSP and `Permissions-Policy`. The CSP does not restrict scripts, so Google Analytics is unaffected. Header behaviour needs checking on the next Vercel deployment.
+
+## Project case studies — 13 November 2026
+
+Search Console showed 12 of 16 pages as "Discovered – currently not indexed" (never crawled). Project pages had roughly 50–80 words of project-specific text each.
+
+- Added `src/data/caseStudies.js`: a challenge and 2–5 implementation decisions per project, rendered as a "Case study" section on each project page.
+- Content is sourced from each public repository's README, file structure and dependencies, or from details already approved in `projects.js`. EGYZone has no public repository, so its case studies only restate the approved stack and features. No metrics, dates or outcomes were added.
+- Rendered project pages now contain 185–473 words. `npm run test:seo` asserts every project has a case study and at least 180 words of page content.
+- Build, 16 Node tests and SEO verification pass. Browser check of RASED at 1280 px and 375 px: no horizontal overflow, no console errors.
+- Search Console on the same day: sitemap resubmitted (17 pages read); indexing requests were refused because the account's daily quota was already used.

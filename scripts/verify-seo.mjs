@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import { projects } from "../src/data/projects.js";
+import { caseStudies } from "../src/data/caseStudies.js";
 import {
   routes,
   getSeo,
@@ -17,6 +18,17 @@ for (const project of projects) {
   assert.ok((await stat(`public${project.image}`)).size > 0, `${project.slug}: missing preview`);
   if (project.mobileImage !== false)
     assert.ok((await stat(`public/projects/${project.slug}-mobile.webp`)).size > 0, `${project.slug}: missing mobile preview`);
+}
+// Thin project pages stay "Discovered – currently not indexed"; every project
+// needs a case study and a substantial amount of rendered text.
+for (const project of projects) {
+  const study = caseStudies[project.slug];
+  assert.ok(study?.challenge && study.decisions?.length >= 2, `${project.slug}: missing case study`);
+  const html = await readFile(`dist/projects/${project.slug}.html`, "utf8");
+  const body = html.match(/<main[^>]*>(.*)<\/main>/s)[1];
+  const words = body.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  // Smaller projects have less documented detail; never pad them with invented content.
+  assert.ok(words >= 180, `${project.slug}: only ${words} words of page content`);
 }
 const titles = new Set();
 for (const route of routes) {

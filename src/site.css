@@ -648,6 +648,49 @@ section[tabindex="-1"]:focus {
   font-size: 22px;
   margin: 40px 0 18px;
 }
+.case-study {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 100px;
+  padding-block: 90px 120px;
+  border-top: 1px solid var(--line);
+}
+.case-study .eyebrow {
+  margin-bottom: 30px;
+}
+.case-study h2 {
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.case-study p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+.case-study .case-study-subtitle {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.case-study ol {
+  list-style: none;
+  counter-reset: decision;
+}
+.case-study li {
+  counter-increment: decision;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.case-study h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.case-study h3::before {
+  content: counter(decision, decimal-leading-zero) "  ";
+  opacity: 0.45;
+  font-weight: 400;
+}
 .project-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -899,6 +942,7 @@ section[tabindex="-1"]:focus {
     padding-inline: 22px;
   }
   .project-story,
+  .case-study,
   .project-details {
     gap: 55px;
   }
@@ -1190,6 +1234,14 @@ section[tabindex="-1"]:focus {
     grid-template-columns: 1fr;
     gap: 45px;
     padding-bottom: 80px;
+  }
+  .case-study {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 60px 70px;
+  }
+  .case-study p {
+    font-size: 16px;
   }
   .project-details li {
     font-size: 15px;

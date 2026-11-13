@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
+import { caseStudies } from "../data/caseStudies";
 import ProjectMedia from "../components/ProjectMedia";
 import NotFound from "./NotFound";
 export default function Project() {
@@ -7,7 +8,8 @@ export default function Project() {
   const index = projects.findIndex((p) => p.slug === slug);
   if (index < 0) return <NotFound />;
   const project = projects[index],
-    next = projects[(index + 1) % projects.length];
+    next = projects[(index + 1) % projects.length],
+    study = caseStudies[project.slug];
   return (
     <article className="project-page">
       <header className="page-heading section-shell">
@@ -64,6 +66,31 @@ export default function Project() {
           {project.note && <p className="project-note">{project.note}</p>}
         </div>
       </section>
+      {study && (
+        <section
+          className="case-study section-shell"
+          aria-labelledby="case-study-title"
+        >
+          <div>
+            <p className="eyebrow">Case study</p>
+            <h2 id="case-study-title" data-reveal>
+              The challenge
+            </h2>
+            <p>{study.challenge}</p>
+          </div>
+          <div>
+            <h2 className="case-study-subtitle">How I approached it</h2>
+            <ol>
+              {study.decisions.map((d) => (
+                <li key={d.title}>
+                  <h3>{d.title}</h3>
+                  <p>{d.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
       <section className="project-details section-shell">
         <div>
           <p className="eyebrow">Frontend focus</p>
