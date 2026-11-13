@@ -47,8 +47,8 @@ live email activation are separate from the local review build.
 Project images are screenshots of actual sites or local copies of their public
 repositories. See `docs/media-sources.md`. Offline projects retain the approved
 links. No project dates, metrics, client counts or proficiency percentages are
-invented. Full-stack roles are preserved for Luxe Retail, ShopZone and the course
-platform; Saint George is frontend only.
+invented. Full-stack roles are preserved for ShopZone and the course platform;
+Luxe Retail and Saint George are frontend only.
 
 The Inter font is supplied locally through `@fontsource/inter`; its OFL license
 is included in `public/licenses/Inter-OFL.txt`.

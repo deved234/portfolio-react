@@ -58,5 +58,5 @@ GSAP + ScrollTrigger (registered in `App.jsx`) and Lenis smooth scroll (`useSmoo
 ## Content rules (from README/docs)
 - Do not invent project dates, metrics, client counts, or skill percentages.
 - Project images must be real screenshots of the actual projects; record sources in `docs/media-sources.md`.
-- Preserve stated roles: Luxe Retail, ShopZone and the course platform are full-stack; Saint George is frontend only.
+- Preserve stated roles: ShopZone and the course platform are full-stack; Luxe Retail and Saint George are frontend only (Luxe Retail changed to frontend on 13 November 2026 at David's request).
 - `docs/verification.md` logs what has been verified; append to it when doing a verification pass.

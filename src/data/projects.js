@@ -249,7 +249,7 @@ export const projects = [
     name: "Luxe Retail",
     category: "React",
     type: "E-commerce",
-    role: "Full Stack Developer",
+    role: "Frontend Developer",
     stack: [
       "React",
       "Vite",
@@ -266,7 +266,7 @@ export const projects = [
     description:
       "An e-commerce application that brings product discovery, favourites and shopping-cart interactions into a consistent, responsive interface.",
     contribution:
-      "I worked across the full stack, with a particular focus on the React storefront, reusable interface components, client-side state and API integration.",
+      "I built the React frontend: the storefront, reusable interface components, persisted client-side state and the integration with a hosted REST API for products, accounts and orders.",
     highlights: [
       "Product browsing and shopping flows",
       "Cart and favourites state with Zustand",
